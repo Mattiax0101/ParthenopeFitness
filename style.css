@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*Questa proprietà dice al browser di includere padding e bordo nella larghezza e altezza quindi 100px anche con padding sarà sempre 100px*/
+}
+
+nav{
+    background: #11416C;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+    gap: 1rem;
+
+}
+
+li{
+    padding-top: 10px;
+}
+
+img{
+    max-width: 8vh;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: darkred;
+}
+
+main {
+    margin-top: 60px;
+}
