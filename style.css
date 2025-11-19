@@ -1,40 +1,265 @@
+/* RESET BASE */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /*Questa proprietà dice al browser di includere padding e bordo nella larghezza e altezza quindi 100px anche con padding sarà sempre 100px*/
+    box-sizing: border-box;
 }
 
-nav{
-    background: #11416C;
+/* NAVBAR */
+nav {
+    background: #123c6f;
     padding: 20px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.img {
+    display: flex;
+    align-items: center;
+}
+
+.img h3 {
+    padding-left: 0.4rem;
+    color: white;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1em;
+}
+
+.logo {
+    max-width: 8.4vh;
 }
 
 ul {
     display: flex;
+    align-items: center;
     list-style-type: none;
     gap: 1rem;
-
 }
 
-li{
-    padding-top: 10px;
-}
-
-img{
-    max-width: 8vh;
-}
-
-a{
-    text-decoration: none;
+a {
     color: white;
+    text-decoration: none;
+    padding: 8px 10px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
 }
 
 a:hover {
-    color: darkred;
+    color: #55aef8;
+    text-shadow: 0 0 10px rgba(255,255,255,0.8);
 }
 
+li > button {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+li > button:hover {
+    background: white;
+    color: #11416C;
+    box-shadow: 0 0 10px rgba(255,255,255,0.8);
+}
+
+/* MAIN */
 main {
     margin-top: 60px;
+}
+
+/* HERO SECTION */
+.hero-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 10px 20px;
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.hero-text h1 {
+    font-size: 4em;
+    color: #123c6f;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.hero-text button {
+    background: #123c6f;
+    color: white;
+    border: none;
+    padding: 20px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hero-text button:hover {
+    background: #55aef8;
+    box-shadow: 0 0 12px rgba(85,174,248,0.7);
+}
+
+.hero-img img {
+    max-width: 500px;
+    height: auto;
+    margin-right: 100px;
+    padding-bottom: 130px;
+}
+
+/* PRODUCTS SECTION */
+#Products {
+    display: flex;
+    justify-content: center;
+    gap: 6rem;
+    margin: 60px 20px;
+    flex-wrap: wrap;
+}
+
+.products-header {
+    width: 100%;
+    text-align: center;
+}
+
+.products-header h2 {
+    font-size: 2em;
+    color: #123c6f;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: -50px;
+    text-transform: uppercase;
+}
+
+/* CARD come immagine cliccabile */
+.cards {
+    width: 220px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.cards a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.cards img {
+    width: 220px;      /* stessa larghezza per tutte */
+    height: 180px;     /* stessa altezza */
+    object-fit: cover; /* ritaglia proporzionalmente */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.cards p {
+    margin-top: 12px;
+    font-size: 1.1em;
+    color: #123c6f;
+    font-weight: 600;
+}
+
+.cards:hover img {
+    transform: scale(1.05);
+}
+
+/* DISCLAIMER SECTION */
+#Disclaimer {
+    background: #fff3cd;
+    border: 1px solid #ffeeba;
+    border-radius: 12px;
+    padding: 30px;
+    margin: 200px auto;
+    max-width: 900px;
+}
+
+.disclaimer-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.disclaimer-text {
+    flex: 1;
+}
+
+.disclaimer-text h2 {
+    color: #856404;
+    margin-bottom: 15px;
+}
+
+.disclaimer-text p {
+    color: #5a4c2d;
+    line-height: 1.6;
+    font-size: 0.95em;
+}
+
+.disclaimer-img img {
+    max-width: 400px;
+    height: auto;
+}
+
+/* FOOTER */
+footer {
+    background: #123c6f;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 30px 150px;
+    flex-wrap: wrap;
+}
+
+.left-footer p,
+.right-footer p {
+    font-size: 0.9em;
+    margin-bottom: 8px;
+}
+
+.right-footer h3 {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+/* Spaziatura tra le sezioni */
+#Starting,
+#Products,
+#Disclaimer {
+    margin-bottom: 100px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    #Starting,
+    #Products,
+    #Disclaimer {
+        margin-bottom: 60px;
+    }
+
+    #Products {
+        gap: 2rem;
+    }
+
+    .cards {
+        width: 100%;
+        max-width: 300px;
+    }
 }
