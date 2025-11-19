@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Login | Parthenope Fitness</title>
+    <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="img">
+        <img class="logo" src="canva.png" alt="Logo" />
+        <h3>Università degli Studi <br> di Napoli Parthenope</h3>
+    </div>
+    <ul>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Documentation</a></li>
+        <li><button onclick="window.location.href='login.html'">Login / Register</button></li>
+    </ul>
+</nav>
+
+<!-- LOGIN / REGISTER SECTION -->
+<main>
+    <section id="auth-section">
+        <div class="auth-container">
+            <!-- LOGIN -->
+            <div class="auth-box">
+                <h2>Login</h2>
+                <form>
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" placeholder="Enter your email" required />
+
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" placeholder="Enter your password" required />
+
+                    <button type="submit">Sign In</button>
+                    <a href="#" class="forgot">Forgot password?</a>
+                </form>
+            </div>
+
+            <!-- REGISTER -->
+            <div class="auth-box">
+                <h2>Register</h2>
+                <form>
+                    <label for="register-email">Email</label>
+                    <input type="email" id="register-email" placeholder="Enter your email" required />
+
+                    <label for="register-password">Password</label>
+                    <input type="password" id="register-password" placeholder="Create a password" required />
+
+                    <label class="checkbox-label">
+                        <input type="checkbox" required />
+                        <span>I accept the terms and conditions</span>
+                    </label>
+
+                    <button type="submit">Register</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <div class="left-footer">
+        <p>&copy; 2026 ParthenopeFitness - Tutti i diritti riservati</p>
+        <p>Sede centrale: Via Amm. F. Acton, 38 - 80133 Napoli, ITALY</p>
+    </div>
+    <div class="right-footer">
+        <h3>Contatti:</h3>
+        <p>mattia.capasso002@studenti.uniparthenope.it</p>
+    </div>
+</footer>
+
+</body>
+</html>
