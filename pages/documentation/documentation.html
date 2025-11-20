@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -32,6 +32,7 @@
             e suddividerlo tra proteine, carboidrati e grassi in base agli obiettivi (dimagrimento, mantenimento, massa).
         </p>
 
+        <!-- BOX 1 -->
         <div class="doc-box">
             <h2>1. Calcolo dei Macronutrienti</h2>
             <ul>
@@ -41,6 +42,7 @@
             </ul>
         </div>
 
+        <!-- BOX 2 -->
         <div class="doc-box">
             <h2>2. Linee guida pratiche</h2>
             <p>
@@ -50,6 +52,7 @@
             </p>
         </div>
 
+        <!-- BOX 3: Calcolatore Calorie -->
         <div class="doc-box">
             <h2>3. Calcolatore di Calorie</h2>
             <form id="calorieForm">
@@ -70,23 +73,79 @@
             </form>
             <p id="result"></p>
         </div>
+
+        <!-- BOX 4: Calcolatore BMI -->
+        <div class="doc-box">
+            <h2>4. Calcolatore BMI</h2>
+            <form id="bmiForm">
+                <label for="bmiWeight">Peso (kg):</label>
+                <input type="number" id="bmiWeight" required><br><br>
+
+                <label for="bmiHeight">Altezza (cm):</label>
+                <input type="number" id="bmiHeight" required><br><br>
+
+                <button type="button" onclick="calculateBMI()">Calcola BMI</button>
+            </form>
+            <p id="bmiResult"></p>
+        </div>
     </section>
 </main>
 
 <script>
+    // ===============================
+    // Calcolatore Calorie
+    // ===============================
     function calculateCalories() {
         const weight = parseFloat(document.getElementById('weight').value);
         const height = parseFloat(document.getElementById('height').value);
         const activity = document.getElementById('activity').value;
 
-        let bmr = 10 * weight + 6.25 * height - 5 * 20 + 5; // età fissa 20 anni
-        let multiplier = 1.2;
-        if (activity === "moderato") multiplier = 1.55;
-        if (activity === "alto") multiplier = 1.9;
+        if (!weight || !height || !activity) {
+            document.getElementById('result').innerText = "Inserisci valori validi.";
+            return;
+        }
 
+        // Formula Mifflin-St Jeor (età fissa 20 anni, sesso maschile)
+        const bmr = 10 * weight + 6.25 * height - 5 * 20 + 5;
+
+        // Mappa dei moltiplicatori per livello di attività
+        const multipliers = {
+            sedentario: 1.2,
+            moderato: 1.55,
+            alto: 1.9
+        };
+
+        const multiplier = multipliers[activity];
         const calories = Math.round(bmr * multiplier);
+
         document.getElementById('result').innerText =
-            "Il tuo fabbisogno calorico giornaliero è circa: " + calories + " kcal";
+            `Il tuo fabbisogno calorico giornaliero è circa: ${calories} kcal`;
+    }
+
+    // ===============================
+    // Calcolatore BMI
+    // ===============================
+    function calculateBMI() {
+        const weight = parseFloat(document.getElementById('bmiWeight').value);
+        const heightCm = parseFloat(document.getElementById('bmiHeight').value);
+
+        if (!weight || !heightCm) {
+            document.getElementById('bmiResult').innerText = "Inserisci valori validi.";
+            return;
+        }
+
+        const height = heightCm / 100; // cm → m
+        const bmi = (weight / (height * height)).toFixed(1);
+
+        // Classificazione BMI
+        let category;
+        if (bmi < 18.5) category = "Sottopeso";
+        else if (bmi < 25) category = "Normopeso";
+        else if (bmi < 30) category = "Sovrappeso";
+        else category = "Obesità";
+
+        document.getElementById('bmiResult').innerText =
+            `Il tuo BMI è: ${bmi} (${category})`;
     }
 </script>
 

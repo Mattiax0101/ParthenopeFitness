@@ -68,8 +68,8 @@
 /* Calcolatore: form */
 #calorieForm {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px 16px;
+    grid-template-columns: 1fr;
+    gap: 8px 12px;
     align-items: end;
 }
 
