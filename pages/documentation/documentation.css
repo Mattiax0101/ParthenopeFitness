@@ -69,7 +69,7 @@
 #calorieForm {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 8px 12px;
+    gap: 2px 6px;
     align-items: end;
 }
 
@@ -117,6 +117,68 @@
 
 #calorieForm button:active {
     transform: translateY(1px);
+}
+
+/* Stile identico al Calcolatore Calorie */
+#bmiForm {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2px 6px;
+    align-items: end;
+}
+
+#bmiForm label {
+    font-weight: 600;
+    color: #11416C;
+}
+
+#bmiForm input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.2px solid #cfe0f5;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #123c6f;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+#bmiForm input:focus {
+    outline: none;
+    border-color: #55aef8;
+    box-shadow: 0 0 0 4px rgba(85,174,248,0.18);
+}
+
+#bmiForm button {
+    grid-column: 1 / -1;
+    justify-self: start;
+    background: #123c6f;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.05s ease;
+}
+
+#bmiForm button:hover {
+    background: #55aef8;
+    box-shadow: 0 6px 16px rgba(85,174,248,0.35);
+}
+
+#bmiForm button:active {
+    transform: translateY(1px);
+}
+
+/* Output risultato BMI */
+#bmiResult {
+    margin-top: 14px;
+    padding: 14px 16px;
+    background: #eef6ff;
+    border: 1px solid #d7e8fb;
+    border-radius: 10px;
+    color: #11416C;
+    font-weight: 600;
 }
 
 /* Output risultato */
