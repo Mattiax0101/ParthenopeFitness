@@ -1,0 +1,164 @@
+/* DOCUMENTATION PAGE STYLES */
+
+/* Wrapper principale */
+.doc-section {
+    max-width: 1000px;
+    margin: 100px auto;
+    padding: 32px;
+    background: #f9fbff;
+    border-radius: 14px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+}
+
+/* Titoli */
+.doc-section h1 {
+    color: #123c6f;
+    font-size: 2.4em;
+    line-height: 1.2;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.doc-section h2 {
+    color: #11416C;
+    font-size: 1.6em;
+    margin-bottom: 12px;
+}
+
+/* Testo */
+.doc-section p,
+.doc-section li {
+    color: #333;
+    font-size: 1.06em;
+    line-height: 1.7;
+}
+
+/* Box informativi */
+.doc-box {
+    background: #ffffff;
+    border: 1px solid #e6eef7;
+    border-left: 6px solid #123c6f;
+    padding: 20px;
+    margin: 18px 0 26px;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(18,60,111,0.06);
+}
+
+/* Liste */
+.doc-box ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+.doc-box ul li {
+    margin: 8px 0;
+    position: relative;
+    padding-left: 22px;
+}
+
+.doc-box ul li::before {
+    content: "•";
+    color: #55aef8;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Calcolatore: form */
+#calorieForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 16px;
+    align-items: end;
+}
+
+#calorieForm label {
+    font-weight: 600;
+    color: #11416C;
+}
+
+#calorieForm input,
+#calorieForm select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.2px solid #cfe0f5;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #123c6f;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+#calorieForm input:focus,
+#calorieForm select:focus {
+    outline: none;
+    border-color: #55aef8;
+    box-shadow: 0 0 0 4px rgba(85,174,248,0.18);
+}
+
+/* Bottoni */
+#calorieForm button {
+    grid-column: 1 / -1;
+    justify-self: start;
+    background: #123c6f;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.05s ease;
+}
+
+#calorieForm button:hover {
+    background: #55aef8;
+    box-shadow: 0 6px 16px rgba(85,174,248,0.35);
+}
+
+#calorieForm button:active {
+    transform: translateY(1px);
+}
+
+/* Output risultato */
+#result {
+    margin-top: 14px;
+    padding: 14px 16px;
+    background: #eef6ff;
+    border: 1px solid #d7e8fb;
+    border-radius: 10px;
+    color: #11416C;
+    font-weight: 600;
+}
+
+/* Micro-tip nel box */
+.doc-tip {
+    background: #f2faff;
+    border: 1px dashed #b8dcff;
+    color: #11416C;
+    padding: 12px 14px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* Spaziature globali */
+.doc-section > p {
+    margin-bottom: 16px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .doc-section {
+        margin: 70px 16px;
+        padding: 22px;
+    }
+
+    #calorieForm {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    #calorieForm button {
+        width: 100%;
+        justify-self: stretch;
+    }
+}

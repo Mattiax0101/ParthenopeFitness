@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Documentation - Parthenope Fitness</title>
+    <link rel="stylesheet" href="documentation.css"/>
+    <link rel="stylesheet" href="../../nav-footer.css"/>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="img">
+        <img class="logo" src="../../assett/canva.png" alt="Logo" style="cursor:pointer;" onclick="window.location.href='../../index.html'"/>
+        <h3>Università degli Studi <br> di Napoli Parthenope</h3>
+    </div>
+    <ul>
+        <li><a href="documentation.html#footer">Contact</a></li>
+        <li><a href="../about/about.html">About</a></li>
+        <li><a href="documentation.html">Documentation</a></li>
+        <li><button onclick="window.location.href='../login/login.html'">Login / Register</button></li>
+    </ul>
+</nav>
+
+<!-- DOCUMENTATION SECTION -->
+<main>
+    <section class="doc-section">
+        <h1>Guida alla Dieta e Calcolo dei Macronutrienti</h1>
+        <p>
+            Per costruire una dieta bilanciata è fondamentale calcolare il fabbisogno calorico giornaliero
+            e suddividerlo tra proteine, carboidrati e grassi in base agli obiettivi (dimagrimento, mantenimento, massa).
+        </p>
+
+        <div class="doc-box">
+            <h2>1. Calcolo dei Macronutrienti</h2>
+            <ul>
+                <li><strong>Proteine:</strong> 1.6–2.2 g per kg di peso corporeo. Fonti: pollo, pesce, uova, legumi.</li>
+                <li><strong>Grassi:</strong> 0.8–1 g per kg di peso corporeo. Fonti: olio d’oliva, frutta secca, avocado.</li>
+                <li><strong>Carboidrati:</strong> il resto delle calorie. Fonti: riso, pasta integrale, patate, avena.</li>
+            </ul>
+        </div>
+
+        <div class="doc-box">
+            <h2>2. Linee guida pratiche</h2>
+            <p>
+                - Dimagrimento: deficit calorico del 15–20% <br>
+                - Mantenimento: calorie pari al fabbisogno <br>
+                - Massa: surplus calorico del 10–15%
+            </p>
+        </div>
+
+        <div class="doc-box">
+            <h2>3. Calcolatore di Calorie</h2>
+            <form id="calorieForm">
+                <label for="weight">Peso (kg):</label>
+                <input type="number" id="weight" required><br><br>
+
+                <label for="height">Altezza (cm):</label>
+                <input type="number" id="height" required><br><br>
+
+                <label for="activity">Livello di attività:</label>
+                <select id="activity" required>
+                    <option value="sedentario">Sedentario</option>
+                    <option value="moderato">Moderato</option>
+                    <option value="alto">Alto</option>
+                </select><br><br>
+
+                <button type="button" onclick="calculateCalories()">Calcola Calorie</button>
+            </form>
+            <p id="result"></p>
+        </div>
+    </section>
+</main>
+
+<script>
+    function calculateCalories() {
+        const weight = parseFloat(document.getElementById('weight').value);
+        const height = parseFloat(document.getElementById('height').value);
+        const activity = document.getElementById('activity').value;
+
+        let bmr = 10 * weight + 6.25 * height - 5 * 20 + 5; // età fissa 20 anni
+        let multiplier = 1.2;
+        if (activity === "moderato") multiplier = 1.55;
+        if (activity === "alto") multiplier = 1.9;
+
+        const calories = Math.round(bmr * multiplier);
+        document.getElementById('result').innerText =
+            "Il tuo fabbisogno calorico giornaliero è circa: " + calories + " kcal";
+    }
+</script>
+
+<!-- FOOTER -->
+<footer id="footer">
+    <div class="left-footer">
+        <p>&copy; 2026 ParthenopeFitness - Tutti i diritti riservati</p>
+        <p>Sede centrale: Via Amm. F. Acton, 38 - 80133 Napoli, ITALY</p>
+    </div>
+    <div class="right-footer">
+        <h3>Contatti:</h3>
+        <p>mattia.capasso002@studenti.uniparthenope.it</p>
+    </div>
+</footer>
+
+</body>
+</html>

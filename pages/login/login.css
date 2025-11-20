@@ -162,6 +162,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    margin-top: 0.6rem;
     padding: 30px 150px;
     flex-wrap: wrap;
 }

@@ -1,0 +1,91 @@
+/* ABOUT PAGE STYLES */
+/* Intro hero */
+.about-hero {
+    max-width: 1000px;
+    margin: 90px auto 30px;
+    padding: 34px;
+    background: #f9fbff;
+    border-radius: 14px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+}
+
+.about-hero__text h1 {
+    color: #123c6f;
+    font-size: 2.4em;
+    line-height: 1.2;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.about-hero__text p {
+    color: #333;
+    font-size: 1.08em;
+    line-height: 1.7;
+    text-align: center;
+}
+
+/* Sezioni */
+.about-section {
+    max-width: 1000px;
+    margin: 16px auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 0 6px;
+}
+
+/* Card */
+.about-card {
+    background: #ffffff;
+    border: 1px solid #e6eef7;
+    border-left: 6px solid #123c6f;
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(18,60,111,0.06);
+}
+
+.about-card h2 {
+    color: #11416C;
+    font-size: 1.6em;
+    margin-bottom: 12px;
+}
+
+.about-card p {
+    color: #333;
+    font-size: 1.06em;
+    line-height: 1.7;
+}
+
+/* Liste */
+.about-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 6px 0 0;
+}
+
+.about-list li {
+    margin: 8px 0;
+    position: relative;
+    padding-left: 22px;
+    color: #333;
+    line-height: 1.7;
+}
+
+.about-list li::before {
+    content: "•";
+    color: #55aef8;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-hero {
+        margin: 70px 16px 20px;
+        padding: 24px;
+    }
+    .about-section {
+        margin: 10px 16px;
+    }
+}
